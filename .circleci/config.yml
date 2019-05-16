@@ -52,9 +52,9 @@ jobs:
       - deploy:
           name: Deploy Master to Heroku
           command: |
-            #if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              git push heroku master
-              #git push https://heroku:$HEROKU_API_KEY@git.heroku.com/circle-ci-first.git master
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              #git push heroku master
+              git push https://git.heroku.com/circle-ci-first.git master
 
               heroku run python manage.py deploy
               heroku restart
