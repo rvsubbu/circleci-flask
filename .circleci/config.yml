@@ -54,8 +54,7 @@ jobs:
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
               #git push heroku master
-              git push https://git.heroku.com/circle-ci-first.git master
-
+              git push https://git.heroku.com/circle-ci-first master
               heroku run python manage.py deploy
               heroku restart
             fi
